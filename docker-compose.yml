@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  workers:
+    container_name: workers
+    build: .
+    volumes:
+      - ./workers:/usr/local/opt/apps/workers
+    command: tail -f /dev/null
+
+  mysql:
+    image: mysql:5.5
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/restore:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: db_urbania3_local
+      MYSQL_ROOT_PASSWORD: 1234
