@@ -88,11 +88,10 @@ class DeleteData extends Base
 
 	public function Update($result)
 	{
-		$sql = "update mod_aviso_aviso_inmueble set estado=3 where idAvImport = $result[0]['idAvImport'] and fchRegistro between ('2017-02-01') and ('2017-02-31')";
+		$sql = "update mod_aviso_aviso_inmueble set estado=3 where idAvImport = $result[0]['idAvImport'] and fchRegistro between ('2017-02-09') and ('2017-02-31')";
 		$result = $mysql->Query($sql);
 		echo "." . PHP_EOL;
 	}
-
 }
 
 
